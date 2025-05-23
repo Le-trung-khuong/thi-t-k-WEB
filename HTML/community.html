@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cộng Đồng Chung Tay - Vì Một Xã Hội Khỏe Mạnh</title>
+    <!-- Nạp các file CSS chung -->
+    <link rel="stylesheet" href="../css/custom.css"> <!-- Hoặc styles-index.css nếu navbar dùng chung -->
+    <link rel="stylesheet" href="../css/styles-index.css"> <!-- Nếu dùng chung nhiều style từ index -->
+    <link rel="stylesheet" href="../css/header-support.css"> <!-- Nếu có -->
+    <!-- Nạp file CSS riêng cho trang community -->
+    <link rel="stylesheet" href="../css/community.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar giống hệt index.html -->
+    <header class="navbar" id="main-header">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <i class="fas fa-shield-heart"></i> Vì Cộng Đồng Khỏe Mạnh
+            </a>
+            <button class="navbar-toggle" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-links">
+                <li class="navbar-link"><a href="index.html">Trang Chủ</a></li>
+                <li class="navbar-link">
+                    <a href="special-info-page.html" class="info-menu-toggle">Thông Tin</a>
+                </li>
+                <li class="navbar-link"><a href="index.html#mission">Mục Tiêu Dự Án</a></li>
+                <li class="navbar-link"><a href="index.html#hope-stories">Câu Chuyện Hy Vọng</a></li>
+                <li class="navbar-link"><a href="future_mirror.html">Gương Soi Tương Lai</a></li>
+                <li class="navbar-link"><a href="support.html">Hỗ Trợ</a></li>
+                <li class="navbar-link"><a href="index.html#contact-footer">Liên Hệ</a></li>
+
+                <li class="navbar-link nav-item-right-align-start">
+                    <a href="community.html" class="active">Cộng đồng</a> <!-- Đánh dấu active -->
+                </li>
+                <li class="navbar-link">
+                    <button class="theme-toggle" aria-label="Chuyển chế độ Sáng hoặc Tối">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+                <li class="navbar-link nav-loggedOut"><a href="login.html">Đăng Nhập</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="community-page">
+        <div class="container">
+            <div class="community-header">
+                <h1><i class="fas fa-users"></i> Diễn Đàn Cộng Đồng</h1>
+                <p>Nơi chia sẻ, học hỏi và cùng nhau xây dựng một xã hội tốt đẹp hơn.</p>
+            </div>
+
+            <!-- Form đăng bài mới -->
+            <div class="post-form-container">
+                <h2><i class="fas fa-edit"></i> Tạo bài viết mới</h2>
+                <form id="new-post-form">
+                    <div class="form-group">
+                        <textarea id="post-content" placeholder="Bạn đang nghĩ gì? (Tối đa 500 ký tự)" maxlength="500" required></textarea>
+                        <small id="char-count" class="char-counter">0/500</small>
+                    </div>
+                    <div class="form-group image-upload-group">
+                        <label for="post-image-upload" class="post-image-label">
+                            <i class="fas fa-image"></i> Thêm ảnh (tùy chọn)
+                        </label>
+                        <input type="file" id="post-image-upload" accept="image/*">
+                        <img id="post-image-preview" src="#" alt="Xem trước ảnh" style="display: none;">
+                        <button type="button" id="remove-image-btn" class="remove-image-btn" style="display: none;">× Xóa ảnh</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Đăng bài</button>
+                </form>
+            </div>
+
+            <!-- Danh sách bài viết -->
+            <div class="posts-feed" id="posts-feed">
+                <h2 class="feed-title"><i class="fas fa-stream"></i> Bài viết mới nhất</h2>
+                <!-- Các bài viết sẽ được thêm vào đây bằng JavaScript -->
+                <div class="no-posts-message" id="no-posts-message">
+                    <i class="fas fa-comments"></i>
+                    <p>Chưa có bài viết nào. Hãy là người đầu tiên chia sẻ!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="community-footer" class="footer"> <!-- Đổi ID để tránh xung đột nếu cần -->
+         <div class="container">
+            <div class="row">
+                <div class="col-4 col-md-6">
+                    <h5 class="footer-title"><i class="fas fa-shield-heart me-2"></i>Vì Cộng Đồng Khỏe Mạnh</h5>
+                    <p>Cộng đồng chung tay đẩy lùi tệ nạn xã hội.</p>
+                </div>
+                <div class="col-2 col-md-6 col-sm-6">
+                    <h6 class="footer-title">Liên Kết Nhanh</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="index.html#important-info">Thông Tin</a></li>
+                    </ul>
+                </div>
+                 <div class="col-2 col-md-6 col-sm-6">
+                    <h6 class="footer-title">Hỗ Trợ</h6>
+                    <ul class="footer-links">
+                        <li><a href="support.html">Trung Tâm Hỗ Trợ</a></li>
+                        <li><a href="tel:111">Tổng Đài 111</a></li>
+                    </ul>
+                </div>
+                <div class="col-4 col-md-6">
+                    <h6 class="footer-title">Kết nối</h6>
+                     <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:contact@vicongdongkhoemanh.org" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <p class="text-center small">© 2023 Vì Cộng Đồng Khỏe Mạnh.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container (nếu chưa có trong main.js hoặc muốn riêng) -->
+    <div class="toast-container"></div>
+
+
+    <script src="../javaScript/main.js"></script>
+    <script src="../javaScript/community.js"></script>
+</body>
+</html>
